@@ -1,3 +1,0 @@
-== Learn Rails
-
-Sample Rails app from Ruby on Rails hack-a-thon in San Fran
