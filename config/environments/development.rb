@@ -26,15 +26,28 @@ LearnRails::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-  
-  # Configure email server settings
+
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  	addres: "smtp.gmail.com",
-  	port: 587,
-  	domain: ENV["DOMAIN_NAME"],
-  	authentication: "plain",
-  	enable_starttls_auto: true,
-  	user_name: ENV["GMAIL_USERNAME"],
-  	password: ENV["GMAIL_PASSWORD"]
-  }
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'somewhere.com',
+    user_name:            'erumppe@gmail.com',
+    password:             'lippln4z',
+    authentication:       'plain',
+    enable_starttls_auto: true  
+  }  
+  # Configure email server settings
+  #config.action_mailer.smtp_settings = {
+  	#addres: "smtp.gmail.com",
+  	#port: 587,
+  	#domain: ENV["DOMAIN_NAME"],
+  	#authentication: "plain",
+  	#enable_starttls_auto: true,
+  	#user_name: ENV["GMAIL_USERNAME"],
+  	#password: ENV["GMAIL_PASSWORD"]
+  #}
+  
+  # Send email in development mode.
+  #config.action_mailer.perform_deliveries = true
 end
