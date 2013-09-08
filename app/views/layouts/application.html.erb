@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>LearnRails</title>
-  <%#= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%#= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  
-  <!-- Add bootstrap css styles -->
-  <!-- What do we need to deal with the data-turbolinks-track stuff here??? -->
-  <%= stylesheet_link_tag "bootstrap.min", media: "all" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-  	<div class="container">
-		<a class="brand info" href="/">Learn Rails</a>
-		<ul class="nav">
-			<li class="active"><a href="/">Home</a></li>
-			<li><a href="/visitor">Visitors</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/contact">Contact</a></li>
-		</ul>
-	</di>
-  </div>
-</div>
-	<div class="container">
-		<%= yield %>
-	</div>
-	
-	<!-- Script resources -->
-	<script src="http://code.jquery.com/jquery.js"></script>
-  	<%= javascript_include_tag "bootstrap.min" %>
-</body>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title><%= content_for?(:title) ? yield(:title) : "Learning Rails" %></title-->
+    <!--meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learning Rails" %>"-->
+    <title><%= title %></title>
+    <meta name="description" content="<%= description %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>	
+    <header class="navbar navbar-inverse navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container" data-no-turbolink>
+          <%= render 'layouts/navigation' %>
+        </div>
+      </nav>
+    </header>
+    <main role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span10 offset1">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer></footer>
+          <!--footer class="footer">
+          	<div class="row">
+          		<div class="span10 offset1">
+          			<h5>Learn Rails - by Erik Rumppe</h5>	
+          		</div>
+          	</div>
+          </footer-->
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

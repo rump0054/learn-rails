@@ -1,10 +1,4 @@
-<div class="row">
-	<div class="span10 offset1">
-		<div class="hero-unit">
-			<h1>Welcome!</h1>
-			<p>Welcome to the home of <%= @owner.name %>.</p>
-			<p>I was born on <span class="label label-info"><%= @owner.birthdate.strftime("%-m/%d/%Y") %></span>.</p>
-			<p>Only <%= @owner.countdown %> days until my birthday!</p>	
-		</div>
-	</div>
-</div>
+<h1>Visitor Page - Welcome!</h1>
+<p>Welcome to the home of <%= @owner.name %>.</p>
+<p>I was born on <span class="label label-info"><%= @owner.birthdate.strftime("%-m/%d/%Y") %></span>.</p>
+<p>Only <%= @owner.countdown %> days until my birthday!</p>	
