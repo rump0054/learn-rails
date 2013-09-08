@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>LearnRails</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%#= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%#= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+  <!-- Add bootstrap css styles -->
+  <!-- What do we need to deal with the data-turbolinks-track stuff here??? -->
+  <%= stylesheet_link_tag "bootstrap.min", media: "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+  	<div class="container">
+		<a class="brand info" href="/">Learn Rails</a>
+		<ul class="nav">
+		  <li class="active"><a href="/">Home</a></li>
+		  <li><a href="/about">About</a></li>
+		  <li><a href="/contact">Contact</a></li>
+		</ul>
+	</di>
+  </div>
+</div>
+	<div class="container">
+		<%= yield %>
+	</div>
+	
+	<!-- Script resources -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+  	<%= javascript_include_tag "bootstrap.min" %>
 </body>
 </html>
