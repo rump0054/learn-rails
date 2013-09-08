@@ -27,16 +27,19 @@ LearnRails::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.action_mailer.default_url_options = { :host => 'arcane-harbor-1333.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'somewhere.com',
     user_name:            'erumppe@gmail.com',
     password:             'lippln4z',
     authentication:       'plain',
     enable_starttls_auto: true  
-  }  
+  } 
   # Configure email server settings
   #config.action_mailer.smtp_settings = {
   	#addres: "smtp.gmail.com",

@@ -86,7 +86,6 @@ LearnRails::Application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'arcane-harbor-1333.herokuapp.com',
     user_name:            'erumppe@gmail.com',
     password:             'lippln4z',
     authentication:       'plain',
